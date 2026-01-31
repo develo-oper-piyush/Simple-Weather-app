@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch }) => {
                 placeholder="Search"
             />
             <div
-                className="bg-background rounded-full p-2 cursor-pointer mr-2 sm:mr-5 shadow-md ring-slate-400 ring-2 focus:outline-none"
+                className="bg-background rounded-full p-2 cursor-pointer mr-2 sm:mr-5 shadow-md ring-slate-400 ring-2 focus:outline-none active:scale-90 transition-all duration-300"
                 onClick={handleSearch}
             >
                 {<Search className="text-foreground"></Search>}
@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex gap-2 justify-center sm:justify-start">
             <div
                 onClick={() => setTheme(isDark ? "light" : "dark")}
-                className={`w-6 h-6 cursor-pointer transition-transform duration-500 ${isDark ? "rotate-180" : "rotate-0"} `}
+                className={`w-6 h-6 relative top-2 cursor-pointer transition-transform duration-500 ${isDark ? "rotate-180" : "rotate-0"} `}
             >
                 {isDark ? (
                     <Sun className="h-6 w-6 text-yellow-500 rotate-0 transition-all"></Sun>
@@ -47,7 +47,7 @@ const Header = () => {
                     <Moon className="h-6 w-6 text-blue-500 rotate-0 transition-all"></Moon>
                 )}
             </div>
-            <span className="hidden sm:block bg-slate-700 text-white select-none rounded-md p-1 border-b-2 border-r-2 border-gray-400">
+            <span className="hidden sm:block bg-foreground text-background select-none rounded-md p-1 border-b-2 border-r-2 border-gray-400">
                 Toggle dark mode
             </span>
         </div>
